@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import glsl from 'vite-plugin-glsl';
 
 export default defineConfig({
-  base: '/glslgalaxy/',
-  plugins: [glsl()]
+  plugins: [glsl({
+    compress: false 
+  })]
 });
