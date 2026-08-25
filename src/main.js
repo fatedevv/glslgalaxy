@@ -322,15 +322,22 @@ window.addEventListener('resize', () => {
 
 //  Animation Loop
 const clock = new THREE.Clock()
+let previousTime = 0;
+let accumulatedTime = 200.0
 
-renderer.setAnimationLoop((timestamp) =>{
+const animate = () =>{
 
-  const elapsedTime = clock.getElapsedTime();
+  const delta = clock.getDelta();
+  accumulatedTime += delta;
 
-  if (elapsedTime) {
-    material.uniforms.uTime.value = elapsedTime + 200.0;
+  /* const elapsedTime = clock.getElapsedTime(); */
+
+  if (material && material.uniforms.uTime) {
+    material.uniforms.uTime.value = accumulatedTime;
   }
 
+
+ 
   
   group.rotation.y += - 0.005
 
@@ -345,5 +352,18 @@ renderer.setAnimationLoop((timestamp) =>{
 
   // Render scene
   renderer.render(scene, camera);
-})
 
+}
+
+renderer.setAnimationLoop(animate)
+
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      renderer.setAnimationLoop(null);
+
+      clock.stop()
+    } else {
+      clock.start();
+      renderer.setAnimationLoop(animate)
+    }
+  })
