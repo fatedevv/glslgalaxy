@@ -28,7 +28,7 @@ void main() {
     modelPosition.z = sin(angle) * distanceToCenter; */
 
   // Spin opt
-  float angleOffset = (1.0 / aRadius) * uTime * 0.05;
+  float angleOffset = (1.0 / (aRadius + 0.0001)) * uTime * 0.05;
   float currentAngle = aAngle + angleOffset;
 
   modelPosition.x = cos(currentAngle) * aRadius;
