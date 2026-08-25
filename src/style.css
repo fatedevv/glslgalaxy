@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+:root {
+  /* Base Container */
+  --tp-base-background-color: hsla(220, 10%, 15%, 0.5);
+  --tp-base-shadow-color: hsla(0, 0%, 0%, 0.3);
+  --tp-base-border-radius: 8px;
+  
+  /* Typography */
+  --tp-label-foreground-color: hsla(220, 20%, 80%, 1);
+  --tp-font-family: 'Inter', system-ui, sans-serif;
+  
+  /* Inputs (Sliders, Text Fields) */
+  --tp-input-background-color: rgb(38, 41, 47);
+  --tp-input-background-color-active: hsla(220, 10%, 35%, 1);
+  --tp-input-background-color-focus: hsla(220, 10%, 30%, 1);
+  --tp-input-background-color-hover: hsla(220, 10%, 28%, 1);
+  --tp-input-foreground-color: hsla(0, 0%, 100%, 1);
+
+  /* Buttons */
+  --tp-button-background-color: rgb(147, 64, 191);
+  --tp-button-background-color-active: hsla(220, 50%, 60%, 1);
+  --tp-button-background-color-focus: hsla(220, 50%, 55%, 1);
+  --tp-button-background-color-hover: hsla(220, 50%, 58%, 1);
+  --tp-button-foreground-color: hsla(0, 0%, 100%, 1);
+
+  /* Folders */
+  --tp-folder-background-color: hsla(220, 10%, 20%, 0.5);
+  --tp-folder-background-color-active: hsla(220, 10%, 25%, 0.5);
+  --tp-folder-background-color-focus: hsla(220, 10%, 22%, 0.5);
+  --tp-folder-background-color-hover: hsla(220, 10%, 24%, 0.5);
+  --tp-folder-foreground-color: hsla(0, 0%, 100%, 1);
+}
+
+/* Target the default Tweakpane wrapper */
+.tp-dfwv {
+  width: 288px !important; /* Make the panel wider (default is ~250px) */
+  top: 16px !important;    /* Adjust distance from the top */
+  right: 16px !important;  /* Adjust distance from the right */
+}
