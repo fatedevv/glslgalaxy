@@ -170,7 +170,7 @@ const galaxyGenerator = () => {
 
       uniforms: {
         uTime: {value: 0},
-        uSize: {value: 15 * renderer.getPixelRatio()},
+        uSize: {value: 25 * renderer.getPixelRatio()},
 
       }
     })
